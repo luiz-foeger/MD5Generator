@@ -9,12 +9,13 @@
 </head>
 
 <body>
+<main>
     <section class="container">
         <h1>Gerador MD5</h1>
         <form action="gerador.php" method="POST">
             <label for="senha">Insira sua senha:</label>
             <input type="text" name="senha" id="senha">
-            <input type="submit" value="Gerar" id="btnGerar">
+            <input type="submit" value="Hash!" id="btnGerar">
         </form>
 </body>
 <script>
@@ -36,11 +37,13 @@
 
     echo '<div class="result">';
         $senha = @$_POST['senha'];
-        echo '<p><strong>Senha: </strong>' . $senha . '</p>';
+        echo '<p><strong>String: </strong>' . $senha . '</p>';
 
         $senhaMD5 = md5(string: $senha);
         echo '<span><strong>MD5 Hash:</strong><p id="hash" onclick="copiarTexto(this)">' . $senhaMD5 . '</p></span>';
     echo '</div>';
+
+    echo '</main>';
 
     echo '<section class="MD5">
             <h1>O que é MD5?</h1>
@@ -50,6 +53,7 @@
             <br>
             <p>Um hash MD5 NÃO é criptografia. É simplesmente uma impressão digital da entrada fornecida. No entanto, é uma transação unidirecional e, como tal, é quase impossível fazer engenharia reversa de um hash MD5 para recuperar a sequência original.</p>
         </section>';
+        
     echo '</section>';
 
 ?>
